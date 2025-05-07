@@ -4,17 +4,29 @@
 }
 
 :root {
-  --colour1: #78ebb6;
-  --colour2: #ab8782;
-  --colour3: #eb8778;
-  --colour4: #7e968b;
-  --colour5: #6b5855;
-  --colour6: #284135;
-  --colour7: whitesmoke;
+  --colour1: #eb8778;
+  --colour2: #8debc0;
+  --colour3: #193327;
+  --colour4: #412c28;
+  --colour5: #385246;
+  --colour6: #6b5855;
+  --colour7: #c08a82;
+  --colour8: #82b89f;
+  --colour9: #96817e;
+  --colour10: #76857e;
+  --colour11: whitesmoke;
 }
 
 body {
-  background-color: var(--colour4);
+  background-image: linear-gradient(
+    to bottom,
+    var(--colour4) 25%,
+    var(--colour1)
+  );
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
   text-align: center;
   font-size: 18px;
   font-family: Delius, "Times New Roman", sans-serif;
@@ -25,43 +37,65 @@ body {
   height: 100%;
   margin-left: auto;
   margin-right: auto;
-  background-color: whitesmoke;
+  background-color: var(--colour11);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-i{
-  color: var(--colour5);
+i {
+  color: var(--colour4);
 }
 
 nav {
-  padding: 1.5em;
-  background-color: var(--colour5);
+  padding: 0.7em;
+  background-color: var(--colour4);
   position: sticky;
   top: 0;
 }
 
 nav a {
-  color: var(--colour3);
+  color: var(--colour1);
   font-weight: bold;
   padding: 1em 2.5em;
   text-decoration: none;
   border-radius: 20px 5px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
 }
 
 nav a:hover {
-  background-color: var(--colour3);
-  color: var(--colour5);
+  background-color: var(--colour1);
+  color: var(--colour4);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
 }
 
 header {
-  padding: 7em;
-  color: var(--colour5);
+  color: var(--colour4);
 }
 
 header h1 {
   font-size: 70px;
+  padding-top: 4em;
 }
 
-header h2{
+header h2 {
   font-size: 25px;
-  padding: 1.5em;
+  padding: 2.5em;
+}
+
+.fa-chevron-down {
+  margin: 15em 0 2em 0;
+  padding: 1em 2em;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.fa-chevron-down:hover {
+  background-color: var(--colour4);
+  color: var(--colour11);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+  transition: all 0.3s ease;
 }
