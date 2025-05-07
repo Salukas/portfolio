@@ -10,20 +10,26 @@
   --colour4: #7e968b;
   --colour5: #6b5855;
   --colour6: #284135;
+  --colour7: whitesmoke;
 }
 
 body {
-  background-color: whitesmoke;
+  background-color: var(--colour4);
   text-align: center;
   font-size: 18px;
   font-family: Delius, "Times New Roman", sans-serif;
 }
 
 #wrapper {
-  width: 100%;
+  width: 100em;
   height: 100%;
   margin-left: auto;
   margin-right: auto;
+  background-color: whitesmoke;
+}
+
+i{
+  color: var(--colour5);
 }
 
 nav {
@@ -38,10 +44,24 @@ nav a {
   font-weight: bold;
   padding: 1em 2.5em;
   text-decoration: none;
-  border-radius: 20px 2px;
+  border-radius: 20px 5px;
 }
 
 nav a:hover {
   background-color: var(--colour3);
   color: var(--colour5);
+}
+
+header {
+  padding: 7em;
+  color: var(--colour5);
+}
+
+header h1 {
+  font-size: 70px;
+}
+
+header h2{
+  font-size: 25px;
+  padding: 1.5em;
 }
