@@ -3,6 +3,11 @@
   padding: 0;
 }
 
+html {
+  scroll-padding-top: 20px; /* Adjust this value based on your navbar height */
+  scroll-behavior: smooth;
+}
+
 :root {
   --colour1: #eb8778;
   --colour2: #8debc0;
@@ -20,27 +25,28 @@
 body {
   background-image: linear-gradient(
     to bottom,
-    var(--colour4) 25%,
+    var(--colour11) 25%,
     var(--colour1)
   );
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
   text-align: center;
   font-size: 18px;
   font-family: Delius, "Times New Roman", sans-serif;
+  font-weight: bold;
 }
 
-#wrapper {
+/* #wrapper {
   width: 100em;
   height: 100%;
   margin-left: auto;
   margin-right: auto;
-  background-color: var(--colour11);
+  background-image: linear-gradient(
+    to bottom,
+    var(--colour11) 25%,
+    var(--colour1)
+  );
+
   border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
+} */
 
 i {
   color: var(--colour4);
@@ -48,48 +54,71 @@ i {
 
 nav {
   padding: 0.7em;
-  background-color: var(--colour4);
   position: sticky;
   top: 0;
+  z-index: 100;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  padding: 0.7em 0 0.5em 0;
+  width: 57%;
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  background-color: var(--colour11);
+}
+
+.nav img {
+  height: 100%;
+  margin: 0 1.1em;
 }
 
 nav a {
-  color: var(--colour1);
+  color: var(--colour4);
   font-weight: bold;
-  padding: 1em 2.5em;
+  padding: 1em 1.7em;
   text-decoration: none;
-  border-radius: 20px 5px;
-  transition: all 0.3s ease;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease, color 0.3s ease;
   display: inline-block;
   position: relative;
 }
 
 nav a:hover {
-  background-color: var(--colour1);
-  color: var(--colour4);
+  background-color: var(--colour2);
+  color: var(--colour11);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   transform: translateY(-3px);
 }
 
 header {
   color: var(--colour4);
+  text-align: center;
 }
 
-header h1 {
+.header-text h1 {
+  width: 30%;
+  margin: auto;
+  margin-top: 4em;
   font-size: 70px;
-  padding-top: 4em;
+  transition: text-shadow 0.3s ease-in, text-shadow 2s ease-out;
 }
 
-header h2 {
-  font-size: 25px;
-  padding: 2.5em;
+h2 {
+  font-size: 30px;
+  padding: 2em;
+  margin-top: 1em;
 }
 
 .fa-chevron-down {
-  margin: 15em 0 2em 0;
+  margin: 7em 0 2em 0;
   padding: 1em 2em;
   border-radius: 30px;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease, color 0.3s ease;
 }
 
 .fa-chevron-down:hover {
@@ -97,5 +126,48 @@ header h2 {
   color: var(--colour11);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   transform: translateY(-3px);
-  transition: all 0.3s ease;
+}
+
+.about,
+.experience,
+.education,
+.projects,
+.skills,
+.contact {
+  padding-top: 20px;
+}
+
+.anchor {
+  display: block;
+  position: relative;
+  top: -70px;
+  visibility: hidden;
+}
+
+.about-content {
+  width: 80%;
+  margin: auto;
+  background-color: var(--colour1);
+  padding: 2em;
+  border-radius: 20px 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.content-cards {
+  width: 80%;
+  height: auto;
+  margin: auto;
+  border-radius: 20px 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  padding: 2em;
+  background-color: var(--colour4);
+}
+
+.card {
+  width: 80%;
+  margin: 25px auto;
+  background-color: var(--colour11);
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  padding: 2em;
 }
