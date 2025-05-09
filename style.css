@@ -23,10 +23,7 @@ html {
 }
 
 body {
-  background-image: linear-gradient(
-    to bottom,
-    var(--colour11) 25%,
-    var(--colour1)
+  background-image: var(--colour1);
   );
   text-align: center;
   font-size: 18px;
@@ -66,8 +63,12 @@ nav {
   width: 57%;
   margin: auto;
   border-radius: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px var(--colour4);
   background-color: var(--colour11);
+}
+.nav:hover{
+  transition: 0.3s ease-in;
+  box-shadow: 0 4px 15px var(--colour2);
 }
 
 .nav img {
@@ -90,7 +91,7 @@ nav a {
 nav a:hover {
   background-color: var(--colour2);
   color: var(--colour11);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 15px var(--colour1);
   transform: translateY(-3px);
 }
 
@@ -104,28 +105,41 @@ header {
   margin: auto;
   margin-top: 4em;
   font-size: 70px;
-  transition: text-shadow 0.3s ease-in, text-shadow 2s ease-out;
+  transition: text-shadow 15s ease-out;
+}
+
+.header-text h1:hover {
+  transition: 0.3s ease-in;
+  text-shadow: 0px 7px 5px var(--colour1), 0px -7px 5px var(--colour1),
+    7px 0px 5px var(--colour1), -7px 0px 5px var(--colour1);
 }
 
 h2 {
   font-size: 30px;
   padding: 2em;
   margin-top: 1em;
+  transition: text-shadow 15s ease-out;
+}
+
+h2:hover {
+  transition: 0.3s ease-in;
+  text-shadow: 0px 6px 5px var(--colour2), 0px -6px 5px var(--colour2),
+    6px 0px 5px var(--colour2), -6px 0px 5px var(--colour2);
 }
 
 .fa-chevron-down {
   margin: 7em 0 2em 0;
   padding: 1em 2em;
   border-radius: 30px;
-  transition: background-color 0.3s ease, transform 0.3s ease,
-    box-shadow 0.3s ease, color 0.3s ease;
+  transition: 0.3s ease-out;
 }
 
 .fa-chevron-down:hover {
-  background-color: var(--colour4);
+  background-color: var(--colour1);
   color: var(--colour11);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 15px var(--colour2);
   transform: translateY(-3px);
+  transition: 0.3s ease-in;
 }
 
 .about,
