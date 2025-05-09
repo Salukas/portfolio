@@ -6,9 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
     'var(--colour2)',
     'var(--colour7)',
     'var(--colour8)',
-    'var(--colour9)',
-    'var(--colour10)',
-    'var(--colour11)',
   ];
 
   let h1colorIndex = 0;
@@ -17,8 +14,11 @@ document.addEventListener('DOMContentLoaded', function () {
   h1Element.addEventListener('mouseenter', function () {
     const currentColor = colors[h1colorIndex];
 
-    this.style.transition = '0.3s ease-in';
-    this.style.textShadow = `0px 7px 5px ${currentColor}, 0px -7px 5px ${currentColor}, 7px 0px 5px ${currentColor}, -7px 0px 5px ${currentColor}`;
+    this.style.transition = '0.2s ease-in';
+    this.style.textShadow = `0px 7px 5px ${currentColor},
+                             0px -7px 5px ${currentColor},
+                             7px 0px 5px ${currentColor},
+                             -7px 0px 5px ${currentColor}`;
 
     h1colorIndex = (h1colorIndex + 1) % colors.length;
   });
@@ -32,8 +32,11 @@ document.addEventListener('DOMContentLoaded', function () {
     h2.addEventListener('mouseenter', function () {
       const currentColor = colors[h2ColorIndex];
 
-      this.style.transition = '0.3s ease-in';
-      this.style.textShadow = `0px 6px 5px ${currentColor}, 0px -6px 5px ${currentColor}, 6px 0px 5px ${currentColor}, -6px 0px 5px ${currentColor}`;
+      this.style.transition = '0.2s ease-in';
+      this.style.textShadow = `0px 6px 5px ${currentColor}, 
+                               0px -6px 5px ${currentColor},
+                               6px 0px 5px ${currentColor},
+                               -6px 0px 5px ${currentColor}`;
 
       h2ColorIndex = (h2ColorIndex + 1) % colors.length;
     });
