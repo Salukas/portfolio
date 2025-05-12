@@ -46,4 +46,93 @@ document.addEventListener('DOMContentLoaded', function () {
       this.style.textShadow = 'none';
     });
   });
+
+  // Slideshow variables
+  let slideIndex = 0;
+  let slideTimer;
+  const slides = document.getElementsByClassName("mySlides");
+  const dots = document.getElementsByClassName("dot");
+  const prevButton = document.querySelector(".prev");
+  const nextButton = document.querySelector(".next");
+  const dotButtons = document.querySelectorAll(".dot");
+  
+  // Initialize slideshow
+  showSlides();
+  
+  // Add event listeners to buttons
+  if (prevButton) {
+    prevButton.addEventListener('click', function() {
+      plusSlides(-1);
+    });
+  }
+  
+  if (nextButton) {
+    nextButton.addEventListener('click', function() {
+      plusSlides(1);
+    });
+  }
+  
+  // Add event listeners to dots
+  dotButtons.forEach(function(dot, index) {
+    dot.addEventListener('click', function() {
+      currentSlide(index + 1);
+    });
+  });
+  
+  // Navigation functions
+  function plusSlides(n) {
+    clearTimeout(slideTimer);
+    slideIndex += n;
+    
+    // Handle edge cases
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    } else if (slideIndex < 1) {
+      slideIndex = slides.length;
+    }
+    
+    updateSlides();
+    resetTimer();
+  }
+  
+  function currentSlide(n) {
+    clearTimeout(slideTimer);
+    slideIndex = n - 1;
+    showSlides();
+  }
+  
+  function resetTimer() {
+    clearTimeout(slideTimer);
+    slideTimer = setTimeout(showSlides, 5000);
+  }
+  
+  function updateSlides() {
+    // Hide all slides
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    
+    // Remove active class from all dots
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    
+    // Display the current slide and activate its dot
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+  }
+  
+  function showSlides() {
+    slideIndex++;
+    
+    // Reset to first slide if at the end
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    }
+    
+    updateSlides();
+    
+    // Set timer for next slide
+    slideTimer = setTimeout(showSlides, 5000);
+  }
 });
